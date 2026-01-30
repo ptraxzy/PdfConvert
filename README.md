@@ -26,13 +26,13 @@ Aplikasi ini menghadirkan berbagai alat PDF esensial, tampilan bersih (clean UI)
 
 Project ini dibangun menggunakan teknologi web modern untuk performa dan developer experience terbaik:
 
-- **Next.js 14** (App Router) — Framework React untuk web modern.
-- **TypeScript** — Tipe data statis untuk kode yang lebih aman.
-- **Tailwind CSS** — Utility-first CSS framework untuk styling cepat.
-- **Framer Motion** — Library animasi untuk interaksi yang halus.
-- **pdf-lib** & **pdfjs-dist** — Core library untuk manipulasi PDF di browser.
-- **Lucide React** — Set ikon open-source yang cantik dan konsisten.
-- **Vercel** — Platform deployment dan hosting.
+- **Next.js 14** 
+- **TypeScript**
+- **Tailwind CSS** 
+- **Framer Motion**
+- **pdf-lib** & **pdfjs-dist** 
+- **Lucide React** 
+- **Vercel** 
 
 ---
 
