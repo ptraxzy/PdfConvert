@@ -30,10 +30,6 @@ Project ini dibangun menggunakan teknologi web modern untuk performa dan develop
 - **TypeScript**
 - **Tailwind CSS** 
 - **Framer Motion**
-- **pdf-lib** & **pdfjs-dist** 
-- **Lucide React** 
-- **Vercel** 
-
 ---
 
 ## 💻 Cara Menjalankan (Local Development)
