@@ -6,7 +6,7 @@ import { Upload, FileText, X } from 'lucide-react';
 
 interface DropzoneProps {
     files?: Array<{ name: string; size: string }>;
-    onDrop: (files: FileList | null) => void;
+    onDrop: (files: File[]) => void;
     onRemove?: (index: number) => void;
     accept?: Record<string, string[]>;
     maxFiles?: number;
@@ -23,9 +23,7 @@ export default function Dropzone({
 }: DropzoneProps) {
     const handleDrop = useCallback(
         (acceptedFiles: File[]) => {
-            const dataTransfer = new DataTransfer();
-            acceptedFiles.forEach((file) => dataTransfer.items.add(file));
-            onDrop(dataTransfer.files);
+            onDrop(acceptedFiles);
         },
         [onDrop]
     );

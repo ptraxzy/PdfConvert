@@ -13,7 +13,7 @@ export default function XlsxToPdfPage() {
     const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    const handleFileSelect = (files: FileList | null) => {
+    const handleFileSelect = (files: File[]) => {
         if (files && files.length > 0) {
             const selectedFile = files[0];
             // Check for excel extensions
