@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FileImage, ImagePlus, FilePlus2, FileDown, Scissors, RotateCw, Upload, FileText, Presentation, CheckCircle2 } from 'lucide-react';
+import { FileImage, ImagePlus, FilePlus2, FileDown, Scissors, RotateCw, Upload, FileText, Presentation, CheckCircle2, FilePlus } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 

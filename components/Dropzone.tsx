@@ -5,12 +5,22 @@ import { useDropzone } from 'react-dropzone';
 import { Upload, FileText, X } from 'lucide-react';
 
 interface DropzoneProps {
-    files: Array<{ name: string; size: string }>;
+    files?: Array<{ name: string; size: string }>;
     onDrop: (files: FileList | null) => void;
-    onRemove: (index: number) => void;
+    onRemove?: (index: number) => void;
+    accept?: Record<string, string[]>;
+    maxFiles?: number;
+    description?: string;
 }
 
-export default function Dropzone({ files = [], onDrop, onRemove }: DropzoneProps) {
+export default function Dropzone({
+    files = [],
+    onDrop,
+    onRemove,
+    accept = { 'application/pdf': ['.pdf'] },
+    maxFiles = 10,
+    description = "Seret dan lepas file PDF di sini, atau klik untuk memilih"
+}: DropzoneProps) {
     const handleDrop = useCallback(
         (acceptedFiles: File[]) => {
             const dataTransfer = new DataTransfer();
@@ -22,8 +32,8 @@ export default function Dropzone({ files = [], onDrop, onRemove }: DropzoneProps
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop: handleDrop,
-        accept: { 'application/pdf': ['.pdf'] },
-        maxFiles: 10,
+        accept,
+        maxFiles,
     });
 
     return (
@@ -32,8 +42,8 @@ export default function Dropzone({ files = [], onDrop, onRemove }: DropzoneProps
             <div
                 {...getRootProps()}
                 className={`border-2 border-dashed rounded-xl p-6 flex flex-col items-center justify-center min-h-[160px] sm:min-h-[220px] text-center cursor-pointer transition-all duration-300 ${isDragActive
-                        ? 'border-sky-500 bg-sky-50 dark:bg-sky-950/20 scale-[1.02]'
-                        : 'border-slate-300 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-800/40 hover:border-sky-400 dark:hover:border-sky-500'
+                    ? 'border-sky-500 bg-sky-50 dark:bg-sky-950/20 scale-[1.02]'
+                    : 'border-slate-300 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-800/40 hover:border-sky-400 dark:hover:border-sky-500'
                     }`}
                 role="button"
                 tabIndex={0}
@@ -46,11 +56,11 @@ export default function Dropzone({ files = [], onDrop, onRemove }: DropzoneProps
                 </div>
 
                 <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base font-medium mb-2">
-                    Seret dan lepas file PDF di sini, atau klik untuk memilih
+                    {description}
                 </p>
 
                 <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm">
-                    Maksimal 10 file • Support: PDF
+                    Maksimal {maxFiles} file
                 </p>
             </div>
 
