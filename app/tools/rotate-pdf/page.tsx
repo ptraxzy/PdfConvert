@@ -58,7 +58,7 @@ export default function RotatePdfPage() {
     const handleDownload = () => {
         if (!rotatedPdf) return;
 
-        const blob = new Blob([rotatedPdf], { type: 'application/pdf' });
+        const blob = new Blob([rotatedPdf as any], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -105,8 +105,8 @@ export default function RotatePdfPage() {
                                 <button
                                     onClick={() => setRotation(90)}
                                     className={`p-6 rounded-xl border-2 transition-all ${rotation === 90
-                                            ? 'border-red-500 bg-red-50'
-                                            : 'border-gray-200 hover:border-red-300'
+                                        ? 'border-red-500 bg-red-50'
+                                        : 'border-gray-200 hover:border-red-300'
                                         }`}
                                 >
                                     <RotateCw className="w-8 h-8 text-red-600 mx-auto mb-2" />
@@ -116,8 +116,8 @@ export default function RotatePdfPage() {
                                 <button
                                     onClick={() => setRotation(180)}
                                     className={`p-6 rounded-xl border-2 transition-all ${rotation === 180
-                                            ? 'border-red-500 bg-red-50'
-                                            : 'border-gray-200 hover:border-red-300'
+                                        ? 'border-red-500 bg-red-50'
+                                        : 'border-gray-200 hover:border-red-300'
                                         }`}
                                 >
                                     <div className="w-8 h-8 mx-auto mb-2 flex items-center justify-center">
@@ -129,8 +129,8 @@ export default function RotatePdfPage() {
                                 <button
                                     onClick={() => setRotation(270)}
                                     className={`p-6 rounded-xl border-2 transition-all ${rotation === 270
-                                            ? 'border-red-500 bg-red-50'
-                                            : 'border-gray-200 hover:border-red-300'
+                                        ? 'border-red-500 bg-red-50'
+                                        : 'border-gray-200 hover:border-red-300'
                                         }`}
                                 >
                                     <RotateCcw className="w-8 h-8 text-red-600 mx-auto mb-2" />

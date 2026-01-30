@@ -62,7 +62,7 @@ export default function CompressPdfPage() {
     const handleDownload = () => {
         if (!compressedPdf) return;
 
-        const blob = new Blob([compressedPdf], { type: 'application/pdf' });
+        const blob = new Blob([compressedPdf as any], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;

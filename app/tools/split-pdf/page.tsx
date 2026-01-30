@@ -54,7 +54,7 @@ export default function SplitPdfPage() {
     };
 
     const handleDownloadPage = (pdfBytes: Uint8Array, index: number) => {
-        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;

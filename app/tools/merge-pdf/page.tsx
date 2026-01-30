@@ -64,7 +64,7 @@ export default function MergePdfPage() {
     const handleDownload = () => {
         if (!pdfResult) return;
 
-        const blob = new Blob([pdfResult], { type: 'application/pdf' });
+        const blob = new Blob([pdfResult as any], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
