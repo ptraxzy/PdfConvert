@@ -13,6 +13,8 @@ export default function Footer() {
         { name: 'PPT ke PDF', href: '/tools/ppt-to-pdf' },
         { name: 'PDF ke Word', href: '/tools/pdf-to-docx' },
         { name: 'PDF ke PPT', href: '/tools/pdf-to-ppt' },
+        { name: 'Excel ke PDF', href: '/tools/xlsx-to-pdf' },
+        { name: 'PDF ke Excel', href: '/tools/pdf-to-xlsx' },
     ];
 
     return (

@@ -82,7 +82,7 @@ export default function PdfToPptPage() {
                 <div className="bg-white rounded-3xl shadow-xl border border-brand-border p-6 md:p-10 mb-12">
                     {!file && !downloadUrl && (
                         <Dropzone
-                            onFilesDrop={handleFileSelect}
+                            onDrop={handleFileSelect}
                             accept={{ 'application/pdf': ['.pdf'] }}
                             maxFiles={1}
                             description="Tarik & lepas file PDF di sini"

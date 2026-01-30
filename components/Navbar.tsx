@@ -29,8 +29,9 @@ export default function Navbar() {
             title: 'Konversi ke PDF',
             tools: [
                 { name: 'JPG ke PDF', href: '/tools/jpg-to-pdf', icon: Image, desc: 'Gambar ke PDF' },
-                { name: 'DOCX ke PDF', href: '/tools/docx-to-pdf', icon: FileText, desc: 'Word ke PDF' },
-                { name: 'PPT ke PDF', href: '/tools/ppt-to-pdf', icon: Presentation, desc: 'PowerPoint ke PDF' },
+                { name: 'Word ke PDF', href: '/tools/docx-to-pdf', icon: FileText, desc: 'Word ke PDF' },
+                { name: 'PowerPoint ke PDF', href: '/tools/ppt-to-pdf', icon: Presentation, desc: 'PPT ke PDF' },
+                { name: 'Excel ke PDF', href: '/tools/xlsx-to-pdf', icon: FilePlus, desc: 'Excel ke PDF' },
             ]
         },
         {
@@ -38,7 +39,8 @@ export default function Navbar() {
             tools: [
                 { name: 'PDF ke JPG', href: '/tools/pdf-to-jpg', icon: Image, desc: 'Ambil gambar dari PDF' },
                 { name: 'PDF ke Word', href: '/tools/pdf-to-docx', icon: FileType, desc: 'Edit PDF di Word' },
-                { name: 'PDF ke PPT', href: '/tools/pdf-to-ppt', icon: Presentation, desc: 'PDF ke Presentasi' },
+                { name: 'PDF ke PowerPoint', href: '/tools/pdf-to-ppt', icon: Presentation, desc: 'PDF ke Presentasi' },
+                { name: 'PDF ke Excel', href: '/tools/pdf-to-xlsx', icon: FilePlus, desc: 'PDF ke Spreadsheet' },
             ]
         }
     ];
@@ -128,11 +130,8 @@ export default function Navbar() {
                         <Link href="/faq" className="font-medium text-brand-text hover:text-brand-primary transition-colors">
                             FAQ
                         </Link>
-                        <Link
-                            href="/contact"
-                            className="px-5 py-2.5 bg-brand-secondary text-white font-semibold rounded-lg hover:bg-brand-primary transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                        >
-                            Kontak Kami
+                        <Link href="/contact" className="font-medium text-brand-text hover:text-brand-primary transition-colors">
+                            Kontak
                         </Link>
                     </div>
 

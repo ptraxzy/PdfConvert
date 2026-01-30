@@ -75,6 +75,20 @@ export default function Home() {
       href: '/tools/pdf-to-ppt',
       iconColor: 'text-orange-600',
     },
+    {
+      icon: FilePlus,
+      title: 'PDF ke Excel',
+      description: 'Ekstrak data tabel ke format Spreadsheet.',
+      href: '/tools/pdf-to-xlsx',
+      iconColor: 'text-green-600',
+    },
+    {
+      icon: FilePlus,
+      title: 'Excel ke PDF',
+      description: 'Ubah spreadsheet menjadi dokumen PDF rapi.',
+      href: '/tools/xlsx-to-pdf',
+      iconColor: 'text-emerald-600',
+    },
   ];
 
   return (

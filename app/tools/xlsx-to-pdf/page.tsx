@@ -1,26 +1,27 @@
 'use client';
 
 import { useState } from 'react';
-import { FileText, Download, Loader2, AlertCircle, ArrowLeft } from 'lucide-react';
+import { FileSpreadsheet, Download, Loader2, AlertCircle, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Dropzone from '@/components/Dropzone';
 
-export default function PdfToDocxPage() {
+export default function XlsxToPdfPage() {
     const [file, setFile] = useState<File | null>(null);
     const [isConverting, setIsConverting] = useState(false);
     const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    const handleFileSelect = (files: File[]) => {
-        if (files.length > 0) {
-            // Validate file type (must be PDF)
-            if (files[0].type !== 'application/pdf') {
-                setError('Mohon upload file PDF.');
+    const handleFileSelect = (files: FileList | null) => {
+        if (files && files.length > 0) {
+            const selectedFile = files[0];
+            // Check for excel extensions
+            if (!selectedFile.name.match(/\.(xlsx|xls)$/i)) {
+                setError('Mohon upload file Excel (.xlsx atau .xls).');
                 return;
             }
-            setFile(files[0]);
+            setFile(selectedFile);
             setError(null);
             setDownloadUrl(null);
         }
@@ -36,7 +37,7 @@ export default function PdfToDocxPage() {
             const formData = new FormData();
             formData.append('file', file);
 
-            const response = await fetch('/api/convert/pdf-to-docx', {
+            const response = await fetch('/api/convert/xlsx-to-pdf', {
                 method: 'POST',
                 body: formData,
             });
@@ -46,7 +47,6 @@ export default function PdfToDocxPage() {
                 throw new Error(errData.error || 'Gagal konversi');
             }
 
-            // Get Blob directly from response
             const blob = await response.blob();
             const url = URL.createObjectURL(blob);
             setDownloadUrl(url);
@@ -70,15 +70,14 @@ export default function PdfToDocxPage() {
                 </Link>
 
                 <div className="text-center mb-10">
-                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <FileText className="w-8 h-8 text-blue-600" />
+                    <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <FileSpreadsheet className="w-8 h-8 text-green-600" />
                     </div>
                     <h1 className="text-3xl md:text-4xl font-bold text-brand-secondary mb-4">
-                        Konversi PDF ke Word
+                        Konversi Excel ke PDF
                     </h1>
                     <p className="text-brand-text/70 max-w-xl mx-auto">
-                        Ubah dokumen PDF Anda menjadi format Word (DOCX) yang bisa diedit.
-                        Cepat, akurat, dan format terjaga.
+                        Ubah spreadsheet Excel menjadi dokumen PDF yang rapi dan mudah dibaca.
                     </p>
                 </div>
 
@@ -86,16 +85,16 @@ export default function PdfToDocxPage() {
                     {!file && !downloadUrl && (
                         <Dropzone
                             onDrop={handleFileSelect}
-                            accept={{ 'application/pdf': ['.pdf'] }}
+                            accept={{ 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'], 'application/vnd.ms-excel': ['.xls'] }}
                             maxFiles={1}
-                            description="Tarik & lepas file PDF di sini, atau klik untuk memilih"
+                            description="Tarik & lepas file Excel di sini"
                         />
                     )}
 
                     {file && !downloadUrl && (
                         <div className="text-center py-8">
                             <div className="flex items-center justify-center gap-4 mb-6">
-                                <FileText className="w-12 h-12 text-blue-500" />
+                                <FileSpreadsheet className="w-12 h-12 text-green-500" />
                                 <div className="text-left">
                                     <p className="font-semibold text-brand-secondary">{file.name}</p>
                                     <p className="text-sm text-brand-text/60">
@@ -114,7 +113,7 @@ export default function PdfToDocxPage() {
                             <button
                                 onClick={handleConvert}
                                 disabled={isConverting}
-                                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 mx-auto"
+                                className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-green-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 mx-auto"
                             >
                                 {isConverting ? (
                                     <>
@@ -123,7 +122,7 @@ export default function PdfToDocxPage() {
                                     </>
                                 ) : (
                                     <>
-                                        Konversi ke Word
+                                        Konversi ke PDF
                                     </>
                                 )}
                             </button>
@@ -141,22 +140,22 @@ export default function PdfToDocxPage() {
                     {downloadUrl && (
                         <div className="text-center py-10">
                             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-[scaleIn_0.5s_ease-out]">
-                                <FileText className="w-8 h-8 text-green-600" />
+                                <FileSpreadsheet className="w-8 h-8 text-green-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-brand-secondary mb-2">
                                 Berhasil Dikonversi!
                             </h3>
                             <p className="text-brand-text/60 mb-8">
-                                Dokumen Word Anda siap diunduh.
+                                File PDF Anda siap diunduh.
                             </p>
 
                             <a
                                 href={downloadUrl}
-                                download={`${file?.name.replace('.pdf', '')}.docx`}
+                                download={`${file?.name.replace(/\.(xlsx|xls)$/i, '')}.pdf`}
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg hover:shadow-green-200 transition-all transform hover:-translate-y-1"
                             >
                                 <Download className="w-5 h-5" />
-                                Download Word
+                                Download PDF
                             </a>
 
                             <button
@@ -170,22 +169,6 @@ export default function PdfToDocxPage() {
                             </button>
                         </div>
                     )}
-                </div>
-
-                {/* Info Section */}
-                <div className="grid md:grid-cols-3 gap-8 text-center text-brand-text/70 text-sm">
-                    <div>
-                        <h4 className="font-bold text-brand-secondary mb-2">Presisi Tinggi</h4>
-                        <p>Format, layout, dan font dipertahankan seakurat mungkin.</p>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-brand-secondary mb-2">Dapat Diedit</h4>
-                        <p>Hasil konversi adalah file DOCX standar yang bisa diedit di Microsoft Word.</p>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-brand-secondary mb-2">Aman</h4>
-                        <p>File dihapus dari server segera setelah pemrosesan selesai.</p>
-                    </div>
                 </div>
             </div>
 
