@@ -122,9 +122,9 @@ export async function getUsageInfo() {
     try {
         const user = await convertapi.getUser();
         return {
-            secondsLeft: user.SecondsLeft,
-            active: user.Active,
-            email: user.Email,
+            secondsLeft: (user as any).SecondsLeft,
+            active: (user as any).Active,
+            email: (user as any).Email,
         };
     } catch (error) {
         console.error('Failed to get usage info:', error);
