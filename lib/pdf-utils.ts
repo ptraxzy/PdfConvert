@@ -2,12 +2,7 @@
 // Lebih reliable dan impressive untuk portfolio!
 
 import { PDFDocument } from 'pdf-lib';
-import * as pdfjs from 'pdfjs-dist';
-
-// Setup PDF.js worker
-if (typeof window !== 'undefined') {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-}
+// pdfjs-dist import moved to dynamic import inside pdfToImages to avoid SSR/Build errors
 
 // Convert images to PDF (client-side)
 export async function imagesToPdf(imageFiles: File[]): Promise<Uint8Array> {
@@ -40,6 +35,13 @@ export async function imagesToPdf(imageFiles: File[]): Promise<Uint8Array> {
 
 // Convert PDF to images (client-side)
 export async function pdfToImages(pdfFile: File): Promise<Blob[]> {
+    // Dynamically import pdfjs-dist to avoid ReferenceError: DOMMatrix is not defined during SSR/Build
+    const pdfjs = await import('pdfjs-dist');
+
+    if (typeof window !== 'undefined' && !pdfjs.GlobalWorkerOptions.workerSrc) {
+        pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+    }
+
     const arrayBuffer = await pdfFile.arrayBuffer();
     const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
 
