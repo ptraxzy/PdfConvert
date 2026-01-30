@@ -92,7 +92,7 @@ export default function Dropzone({
                             </div>
 
                             <button
-                                onClick={() => onRemove(idx)}
+                                onClick={() => onRemove?.(idx)}
                                 className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-md bg-red-600 text-white text-xs sm:text-sm font-medium hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition-colors flex-shrink-0"
                                 aria-label={`Hapus ${file.name}`}
                             >
