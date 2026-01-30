@@ -27,7 +27,7 @@ export default function AboutPage() {
             <Navbar />
 
             <div className="max-w-6xl mx-auto px-4 pt-24 pb-16">
-                {/* Back Button */}
+                {/* Tombol Kembali */}
                 <Link
                     href="/"
                     className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 mb-6 transition-colors opacity-0 animate-[fadeIn_0.6s_ease-out_forwards]"
@@ -36,7 +36,7 @@ export default function AboutPage() {
                     Kembali ke Beranda
                 </Link>
 
-                {/* Hero Section */}
+                {/* Bagian Hero */}
                 <div className="text-center mb-16 opacity-0 animate-[slideUp_0.6s_ease-out_forwards]">
                     <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                         Tentang KonversiPDF
@@ -45,13 +45,13 @@ export default function AboutPage() {
                         Platform konversi PDF modern yang mengutamakan privasi, kecepatan, dan kemudahan penggunaan.
                     </p>
                     <div className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
-                        Version 1.0.0
+                        Versi 1.0.0
                     </div>
                 </div>
 
-                {/* Two Column Layout: Story + Developer */}
+                {/* Layout Dua Kolom: Cerita + Pengembang */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
-                    {/* Story Section - 2 columns */}
+                    {/* Bagian Cerita - 2 kolom */}
                     <div className="lg:col-span-2 bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
                         <h2 className="text-3xl font-bold text-gray-900 mb-6">Kenapa Kami Buat Ini?</h2>
                         <div className="prose prose-lg max-w-none text-gray-600">
@@ -68,9 +68,9 @@ export default function AboutPage() {
                                 Hasilnya? Tools PDF yang <strong>cepat, aman, dan gratis selamanya</strong>.
                             </p>
 
-                            {/* Tech Stack */}
+                            {/* Stack Teknologi */}
                             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-                                <h3 className="font-semibold text-gray-900 mb-2 text-base">Tech Stack</h3>
+                                <h3 className="font-semibold text-gray-900 mb-2 text-base">Stack Teknologi</h3>
                                 <div className="flex flex-wrap gap-2">
                                     <span className="px-3 py-1 bg-white border border-gray-300 rounded-lg text-sm text-gray-700">
                                         Next.js
@@ -86,7 +86,7 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    {/* Developer Section - 1 column */}
+                    {/* Bagian Pengembang - 1 kolom */}
                     <div className="lg:col-span-1">
                         <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl border border-blue-200 p-6 shadow-lg sticky top-24">
                             <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
@@ -94,7 +94,7 @@ export default function AboutPage() {
                             </h3>
 
                             <div className="bg-white rounded-2xl p-6 shadow-md">
-                                {/* Avatar */}
+                                {/* Kode Avatar */}
                                 <div className="flex flex-col items-center mb-4">
                                     <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mb-3 shadow-lg">
                                         <span className="text-2xl font-bold text-white">MP</span>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                                     </div>
                                 </div>
 
-                                {/* Info */}
+                                {/* Info Pengembang */}
                                 <div className="text-center mb-4">
                                     <h4 className="text-lg font-bold text-gray-900 mb-1">
                                         Muhammad Putra Alghifary
@@ -117,7 +117,7 @@ export default function AboutPage() {
                                     </p>
                                 </div>
 
-                                {/* Contact */}
+                                {/* Kontak */}
                                 <div className="flex gap-2 justify-center">
                                     <a
                                         href="mailto:putraagifary12@gmail.com"
@@ -141,7 +141,7 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                {/* Features Grid */}
+                {/* Grid Fitur */}
                 <div className="mb-16">
                     <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
                         Kenapa KonversiPDF Berbeda?
