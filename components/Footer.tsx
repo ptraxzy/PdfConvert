@@ -11,6 +11,8 @@ export default function Footer() {
         { name: 'Putar PDF', href: '/tools/rotate-pdf' },
         { name: 'DOCX ke PDF', href: '/tools/docx-to-pdf' },
         { name: 'PPT ke PDF', href: '/tools/ppt-to-pdf' },
+        { name: 'PDF ke Word', href: '/tools/pdf-to-docx' },
+        { name: 'PDF ke PPT', href: '/tools/pdf-to-ppt' },
     ];
 
     return (

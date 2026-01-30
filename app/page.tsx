@@ -61,6 +61,20 @@ export default function Home() {
       href: '/tools/ppt-to-pdf',
       iconColor: 'text-teal-500',
     },
+    {
+      icon: FileText,
+      title: 'PDF ke Word',
+      description: 'Ubah file PDF menjadi dokumen Word yang bisa diedit.',
+      href: '/tools/pdf-to-docx',
+      iconColor: 'text-blue-600',
+    },
+    {
+      icon: Presentation,
+      title: 'PDF ke PPT',
+      description: 'Konversi konten PDF menjadi slide PowerPoint.',
+      href: '/tools/pdf-to-ppt',
+      iconColor: 'text-orange-600',
+    },
   ];
 
   return (
