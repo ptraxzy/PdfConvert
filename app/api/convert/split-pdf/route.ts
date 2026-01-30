@@ -26,7 +26,7 @@ export async function POST(req: Request) {
         const pdfPages = await splitPdf(buffer);
 
         // Convert buffers to base64
-        const pages = pdfPages.map((buf, index) => ({
+        const pages = pdfPages.map((buf: any, index: number) => ({
             filename: `page-${index + 1}.pdf`,
             data: buf.toString('base64'),
         }));
