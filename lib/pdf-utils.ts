@@ -57,7 +57,7 @@ export async function pdfToImages(pdfFile: File): Promise<Blob[]> {
         await page.render({
             canvasContext: context,
             viewport: viewport,
-        }).promise;
+        } as any).promise;
 
         const blob = await new Promise<Blob>((resolve) => {
             canvas.toBlob((blob) => resolve(blob!), 'image/jpeg', 0.95);
