@@ -19,8 +19,8 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo Aplikasi */}
-                    <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                        KonversiPDF
+                    <Link href="/" className="text-2xl font-bold text-brand-secondary flex items-center gap-2">
+                        <span className="text-brand-primary">Konversi</span>PDF
                     </Link>
 
                     {/* Menu Desktop */}
@@ -29,7 +29,7 @@ export default function Navbar() {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="text-gray-700 hover:text-red-600 font-medium transition-colors"
+                                className="text-brand-text hover:text-brand-primary font-medium transition-colors"
                             >
                                 {item.name}
                             </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
                     {/* Tombol Menu Mobile */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                        className="md:hidden p-2 hover:bg-brand-accent rounded-lg transition-colors text-brand-secondary"
                         aria-label="Toggle menu"
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -48,13 +48,13 @@ export default function Navbar() {
 
                 {/* Menu Mobile (Responsif) */}
                 {isOpen && (
-                    <div className="md:hidden py-4 space-y-2 border-t border-gray-100">
+                    <div className="md:hidden py-4 space-y-2 border-t border-brand-border h-screen bg-brand-bg">
                         {menuItems.map((item) => (
                             <Link
                                 key={item.name}
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block py-2 px-4 text-gray-700 hover:bg-gray-50 hover:text-red-600 rounded-lg transition-colors font-medium"
+                                className="block py-3 px-4 text-brand-text hover:bg-brand-accent hover:text-brand-primary rounded-lg transition-colors font-medium text-lg"
                             >
                                 {item.name}
                             </Link>

@@ -14,13 +14,13 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-gray-900 text-gray-300">
+        <footer className="bg-brand-secondary text-gray-300">
             <div className="max-w-6xl mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     {/* Bagian Brand & Info */}
                     <div className="md:col-span-1">
-                        <Link href="/" className="text-2xl font-bold text-white mb-4 block">
-                            KonversiPDF
+                        <Link href="/" className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                            <span className="text-brand-primary">Konversi</span>PDF
                         </Link>
                         <p className="text-sm text-gray-400 mb-4">
                             Platform konversi PDF gratis, cepat, dan aman. 100% client-side processing.
@@ -30,13 +30,13 @@ export default function Footer() {
                                 href="https://github.com/ptraxzy"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+                                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-brand-primary transition-colors text-white"
                             >
                                 <Github className="w-5 h-5" />
                             </a>
                             <a
                                 href="mailto:putraagifary12@gmail.com"
-                                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+                                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-brand-primary transition-colors text-white"
                             >
                                 <Mail className="w-5 h-5" />
                             </a>
@@ -51,7 +51,7 @@ export default function Footer() {
                                 <li key={tool.name}>
                                     <Link
                                         href={tool.href}
-                                        className="text-sm hover:text-white transition-colors"
+                                        className="text-sm hover:text-brand-primary transition-colors"
                                     >
                                         {tool.name}
                                     </Link>
@@ -65,17 +65,17 @@ export default function Footer() {
                         <h3 className="text-white font-semibold mb-4">Perusahaan</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/about" className="text-sm hover:text-white transition-colors">
+                                <Link href="/about" className="text-sm hover:text-brand-primary transition-colors">
                                     Tentang Kami
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/faq" className="text-sm hover:text-white transition-colors">
+                                <Link href="/faq" className="text-sm hover:text-brand-primary transition-colors">
                                     FAQ
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-sm hover:text-white transition-colors">
+                                <Link href="/contact" className="text-sm hover:text-brand-primary transition-colors">
                                     Kontak
                                 </Link>
                             </li>
@@ -87,12 +87,12 @@ export default function Footer() {
                         <h3 className="text-white font-semibold mb-4">Legal</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/privacy" className="text-sm hover:text-white transition-colors">
+                                <Link href="/privacy" className="text-sm hover:text-brand-primary transition-colors">
                                     Kebijakan Privasi
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/terms" className="text-sm hover:text-white transition-colors">
+                                <Link href="/terms" className="text-sm hover:text-brand-primary transition-colors">
                                     Syarat & Ketentuan
                                 </Link>
                             </li>
@@ -101,13 +101,13 @@ export default function Footer() {
                 </div>
 
                 {/* Footer Bawah */}
-                <div className="border-t border-gray-800 pt-8">
+                <div className="border-t border-slate-800 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-sm text-gray-400">
                             © {new Date().getFullYear()} KonversiPDF. All rights reserved.
                         </p>
                         <p className="text-sm text-gray-400">
-                            Made with ❤️ by <a href="https://github.com/ptraxzy" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300">Muhammad Putra Alghifary</a>
+                            Made with ❤️ by <a href="https://github.com/ptraxzy" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:text-orange-400 font-medium">Muhammad Putra Alghifary</a>
                         </p>
                     </div>
                 </div>
