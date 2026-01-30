@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📄 KonversiPDF - Modern PDF Tools
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8) ![License](https://img.shields.io/badge/License-MIT-green)
 
-First, run the development server:
+Aplikasi web modern untuk konversi dan manipulasi file PDF secara gratis. Dibangun dengan Next.js 14, Tailwind CSS, dan teknologi pemrosesan PDF client-side untuk privasi maksimal.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌐 **Demo Live:** [https://konversipdf.com](https://konversipdf.com) (Contoh URL)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Fitur Unggulan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Privacy-First**: Sebagian besar pemrosesan (Merge, Split, Rotate, PDF ke JPG) berjalan 100% di browser pengguna. File Anda tidak pernah meninggalkan perangkat Anda.
+- **Server-Side Conversion**: Dukungan konversi format Office (DOCX, PPT) menggunakan API secure server-side.
+- **Modern UI/UX**: Desain responsif, animasi halus, dan antarmuka yang intuitif.
+- **PWA Ready**: Dapat diinstal sebagai aplikasi di perangkat mobile dan desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🛠️ Daftar Alat
+| Alat | Deskripsi | Processing |
+|------|-----------|------------|
+| 🖼️ **PDF ke JPG** | Ubah halaman PDF menjadi gambar kualitas tinggi | Client-side |
+| 📷 **JPG ke PDF** | Gabungkan banyak foto menjadi satu file PDF | Client-side |
+| 🔗 **Gabung PDF** | Satukan beberapa file PDF menjadi satu | Client-side |
+| ✂️ **Pisah PDF** | Pecah file PDF per halaman atau range tertentu | Client-side |
+| 📦 **Kompres PDF** | Perkecil ukuran file PDF tanpa kurangi kualitas | Client-side |
+| 🔄 **Putar PDF** | Rotasi halaman PDF 90/180/270 derajat | Client-side |
+| 📝 **DOCX ke PDF** | Konversi dokumen Word ke PDF presisi tinggi | Server-side (API) |
+| 📊 **PPT ke PDF** | Konversi presentasi PowerPoint ke PDF | Server-side (API) |
 
-## Learn More
+## 🚀 Teknologi
 
-To learn more about Next.js, take a look at the following resources:
+Project ini dibangun menggunakan stack modern:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **PDF Core**: `pdf-lib` & `pdfjs-dist`
+- **Animations**: CSS Animations & Tailwind config
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💻 Cara Menjalankan (Local Development)
 
-## Deploy on Vercel
+Ikuti langkah ini untuk menjalankan project di komputer Anda:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/username/pdfconvert.git
+   cd pdfconvert
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   # atau
+   yarn install
+   ```
+
+3. **Setup Environment Variables**
+   Buat file `.env.local` di root folder dan tambahkan API Key untuk fitur DOCX/PPT (Dapatkan di [ConvertAPI](https://www.convertapi.com/)):
+   ```env
+   PDF_API_KEY=your_convert_api_secret_key_here
+   ```
+
+4. **Jalankan Server Development**
+   ```bash
+   npm run dev
+   ```
+
+5. **Buka Browser**
+   Buka [http://localhost:3000](http://localhost:3000) untuk melihat aplikasi.
+
+## 📦 Deployment (Vercel)
+
+Cara termudah untuk deploy adalah menggunakan [Vercel](https://vercel.com/):
+
+1. Push project ke GitHub/GitLab.
+2. Import project di dashboard Vercel.
+3. Masukkan Environment Variable `PDF_API_KEY`.
+4. Klik **Deploy**.
+
+## 🤝 Kontribusi
+
+Kontribusi sangat diterima! Silakan buat Pull Request untuk fitur baru atau perbaikan bug.
+
+1. Fork repository ini
+2. Buat branch fitur (`git checkout -b fitur-keren`)
+3. Commit perubahan (`git commit -m 'Menambahkan fitur keren'`)
+4. Push ke branch (`git push origin fitur-keren`)
+5. Buat Pull Request
+
+## 📝 Lisensi
+
+Project ini dilisensikan di bawah [MIT License](LICENSE).
+
+---
+
+Dibuat dengan ❤️ oleh **Muhammad Putra Alghifary**
