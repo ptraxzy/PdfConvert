@@ -34,7 +34,7 @@ export async function convertPdfToJpg(pdfBuffer: Buffer | Uint8Array) {
 
     // Return array of JPG buffers
     const jpgBuffers = await Promise.all(
-        result.files.map(file => file.read())
+        result.files.map(file => (file as any).read())
     );
 
     return jpgBuffers;
@@ -54,7 +54,7 @@ export async function convertImagesToPdf(imageBuffers: Array<Buffer | Uint8Array
     const result = await convertapi.convert('pdf', filesParam, 'jpg');
 
     // Return PDF buffer
-    const pdfBuffer = await result.files[0].read();
+    const pdfBuffer = await (result.files[0] as any).read();
     return pdfBuffer;
 }
 
@@ -70,7 +70,7 @@ export async function mergePdfs(pdfBuffers: Array<Buffer | Uint8Array>) {
 
     const result = await convertapi.convert('merge', filesParam, 'pdf');
 
-    const mergedPdf = await result.files[0].read();
+    const mergedPdf = await (result.files[0] as any).read();
     return mergedPdf;
 }
 
@@ -84,7 +84,7 @@ export async function splitPdf(pdfBuffer: Buffer | Uint8Array) {
 
     // Return array of PDF buffers (one per page)
     const pdfPages = await Promise.all(
-        result.files.map(file => file.read())
+        result.files.map(file => (file as any).read())
     );
 
     return pdfPages;
@@ -98,7 +98,7 @@ export async function compressPdf(pdfBuffer: Buffer | Uint8Array) {
         File: pdfBuffer,
     }, 'pdf');
 
-    const compressedPdf = await result.files[0].read();
+    const compressedPdf = await (result.files[0] as any).read();
     return compressedPdf;
 }
 
@@ -111,7 +111,7 @@ export async function rotatePdf(pdfBuffer: Buffer | Uint8Array, angle: 90 | 180 
         Angle: angle,
     }, 'pdf');
 
-    const rotatedPdf = await result.files[0].read();
+    const rotatedPdf = await (result.files[0] as any).read();
     return rotatedPdf;
 }
 
