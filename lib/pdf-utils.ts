@@ -124,7 +124,7 @@ export async function rotatePdf(pdfFile: File, degrees: 90 | 180 | 270): Promise
     const pages = pdfDoc.getPages();
     pages.forEach((page) => {
         const currentRotation = page.getRotation().angle;
-        page.setRotation({ type: 'degrees', angle: currentRotation + degrees });
+        page.setRotation({ type: 'degrees', angle: currentRotation + degrees } as any);
     });
 
     return await pdfDoc.save();
