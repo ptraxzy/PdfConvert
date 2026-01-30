@@ -71,10 +71,10 @@ export default function Navbar() {
                     </Link>
 
                     {/* Menu Desktop */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden md:flex items-center gap-8 static">
                         {/* Mega Menu Trigger */}
                         <div
-                            className="relative group"
+                            className="static" // Changed from relative to static to allow full-width dropdown
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
@@ -87,40 +87,41 @@ export default function Navbar() {
 
                             {/* Mega Menu Dropdown */}
                             <div
-                                className={`absolute top-full left-1/2 -translate-x-1/2 w-[900px] bg-white rounded-2xl shadow-2xl border border-brand-border p-8 grid grid-cols-4 gap-8 transition-all duration-300 origin-top ${isToolsOpen ? 'opacity-100 scale-100 visible translate-y-0' : 'opacity-0 scale-95 invisible -translate-y-2'
+                                className={`absolute top-[80px] left-0 right-0 w-full bg-white border-b border-brand-border shadow-2xl transition-all duration-300 origin-top z-40 ${isToolsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                                     }`}
                             >
-                                {/* Triangle Pointer */}
-                                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-brand-border transform rotate-45"></div>
-
-                                {toolCategories.map((category) => (
-                                    <div key={category.title} className="space-y-4">
-                                        <h3 className="font-bold text-brand-secondary text-sm uppercase tracking-wider border-b border-brand-border pb-2">
-                                            {category.title}
-                                        </h3>
-                                        <ul className="space-y-3">
-                                            {category.tools.map((tool) => (
-                                                <li key={tool.name}>
-                                                    <Link
-                                                        href={tool.href}
-                                                        className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-brand-accent transition-colors"
-                                                        onClick={() => setIsToolsOpen(false)}
-                                                    >
-                                                        <tool.icon className="w-5 h-5 text-brand-text/60 group-hover/item:text-brand-primary transition-colors mt-0.5" />
-                                                        <div>
-                                                            <div className="font-semibold text-brand-secondary group-hover/item:text-brand-primary transition-colors text-sm">
-                                                                {tool.name}
-                                                            </div>
-                                                            <div className="text-xs text-brand-text/50">
-                                                                {tool.desc}
-                                                            </div>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                                    <div className="grid grid-cols-4 gap-x-12 gap-y-8">
+                                        {toolCategories.map((category) => (
+                                            <div key={category.title} className="space-y-4">
+                                                <h3 className="font-bold text-brand-secondary text-sm uppercase tracking-wider border-b border-brand-border pb-2">
+                                                    {category.title}
+                                                </h3>
+                                                <ul className="space-y-3">
+                                                    {category.tools.map((tool) => (
+                                                        <li key={tool.name}>
+                                                            <Link
+                                                                href={tool.href}
+                                                                className="flex items-start gap-3 group/item p-2 -mx-2 rounded-lg hover:bg-brand-accent/50 transition-colors"
+                                                                onClick={() => setIsToolsOpen(false)}
+                                                            >
+                                                                <tool.icon className="w-5 h-5 text-brand-text/60 group-hover/item:text-brand-primary transition-colors mt-0.5" />
+                                                                <div>
+                                                                    <div className="font-semibold text-brand-secondary group-hover/item:text-brand-primary transition-colors text-sm">
+                                                                        {tool.name}
+                                                                    </div>
+                                                                    <div className="text-xs text-brand-text/50">
+                                                                        {tool.desc}
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         </div>
 

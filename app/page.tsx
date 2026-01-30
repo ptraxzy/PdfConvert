@@ -1,93 +1,94 @@
 import Link from 'next/link';
-import { FileImage, ImagePlus, FilePlus2, FileDown, Scissors, RotateCw, Upload, FileText, Presentation, CheckCircle2, FilePlus } from 'lucide-react';
+import { FileDown, Scissors, RotateCw, Upload, CheckCircle2, Minimize2, FilePlus, RefreshCw, Presentation } from 'lucide-react';
+import { WordIcon, ExcelIcon, PowerPointIcon, PdfIcon, ImageIcon } from '@/components/BrandIcons';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   const tools = [
     {
-      icon: FileImage,
+      icon: PdfIcon, // Changed to PdfIcon (or ImageIcon if distinct)
       title: 'PDF ke JPG',
       description: 'Ekstrak halaman PDF menjadi gambar berkualitas tinggi.',
       href: '/tools/pdf-to-jpg',
-      iconColor: 'text-red-500',
+      iconColor: '',
     },
     {
-      icon: ImagePlus,
+      icon: ImageIcon, // Changed to ImageIcon
       title: 'JPG ke PDF',
-      description: 'Ubah gambar menjadi dokumen PDF dalam hitungan detik.',
+      description: 'Ubah gambar JPG/PNG menjadi file PDF dalam hitungan detik.',
       href: '/tools/jpg-to-pdf',
-      iconColor: 'text-blue-500',
+      iconColor: '',
     },
     {
-      icon: FilePlus2,
+      icon: FilePlus, // Lucide for Merge
       title: 'Gabung PDF',
-      description: 'Satukan banyak file PDF menjadi satu dokumen rapi.',
+      description: 'Satukan banyak file PDF menjadi satu dokumen urut.',
       href: '/tools/merge-pdf',
-      iconColor: 'text-green-500',
+      iconColor: 'text-violet-500',
     },
     {
-      icon: Scissors,
-      title: 'Pisah PDF',
-      description: 'Ambil beberapa halaman atau pisahkan PDF per halaman.',
-      href: '/tools/split-pdf',
-      iconColor: 'text-orange-500',
-    },
-    {
-      icon: FileDown,
+      icon: Minimize2, // Lucide for Compress
       title: 'Kompres PDF',
       description: 'Perkecil ukuran file PDF tanpa mengurangi kualitas visual.',
       href: '/tools/compress-pdf',
-      iconColor: 'text-purple-500',
+      iconColor: 'text-rose-500',
     },
     {
-      icon: RotateCw,
+      icon: Scissors, // Lucide
+      title: 'Pisah PDF',
+      description: 'Ambil halaman tertentu dari PDF atau pisahkan setiap halaman.',
+      href: '/tools/split-pdf',
+      iconColor: 'text-amber-500',
+    },
+    {
+      icon: RefreshCw, // Lucide
       title: 'Putar PDF',
-      description: 'Rotasi halaman PDF anda ke orientasi yang benar.',
+      description: 'Rotasi halaman PDF ke orientasi yang benar.',
       href: '/tools/rotate-pdf',
       iconColor: 'text-pink-500',
     },
     {
-      icon: FileText,
-      title: 'DOCX ke PDF',
-      description: 'Konversi dokumen Word menjadi format PDF profesional.',
+      icon: WordIcon,
+      title: 'Word ke PDF',
+      description: 'Konversi dokumen Word (DOC/DOCX) ke PDF dengan format terjaga.',
       href: '/tools/docx-to-pdf',
-      iconColor: 'text-indigo-500',
+      iconColor: '',
     },
     {
-      icon: Presentation,
-      title: 'PPT ke PDF',
-      description: 'Ubah presentasi PowerPoint menjadi file PDF siap bagi.',
+      icon: PowerPointIcon,
+      title: 'PowerPoint ke PDF',
+      description: 'Ubah presentasi PPT menjadi PDF untuk kemudahan berbagi.',
       href: '/tools/ppt-to-pdf',
-      iconColor: 'text-teal-500',
+      iconColor: '',
     },
     {
-      icon: FileText,
+      icon: WordIcon,
       title: 'PDF ke Word',
       description: 'Ubah file PDF menjadi dokumen Word yang bisa diedit.',
       href: '/tools/pdf-to-docx',
-      iconColor: 'text-blue-600',
+      iconColor: '',
     },
     {
-      icon: Presentation,
+      icon: PowerPointIcon,
       title: 'PDF ke PPT',
       description: 'Konversi konten PDF menjadi slide PowerPoint.',
       href: '/tools/pdf-to-ppt',
-      iconColor: 'text-orange-600',
+      iconColor: '',
     },
     {
-      icon: FilePlus,
+      icon: ExcelIcon,
       title: 'PDF ke Excel',
       description: 'Ekstrak data tabel ke format Spreadsheet.',
       href: '/tools/pdf-to-xlsx',
-      iconColor: 'text-green-600',
+      iconColor: '',
     },
     {
-      icon: FilePlus,
+      icon: ExcelIcon,
       title: 'Excel ke PDF',
       description: 'Ubah spreadsheet menjadi dokumen PDF rapi.',
       href: '/tools/xlsx-to-pdf',
-      iconColor: 'text-emerald-600',
+      iconColor: '',
     },
   ];
 
