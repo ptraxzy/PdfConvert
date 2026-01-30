@@ -29,7 +29,7 @@ Project ini dibangun menggunakan teknologi web modern untuk performa dan develop
 - **Next.js 14** 
 - **TypeScript**
 - **Tailwind CSS** 
-- **Framer Motion**
+- **Vercel**
 ---
 
 ## 💻 Cara Menjalankan (Local Development)
