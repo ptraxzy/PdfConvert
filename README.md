@@ -1,94 +1,108 @@
-# 📄 KonversiPDF - Modern PDF Tools
+# KonversiPDF — Aplikasi PDF Tools Modern & Cepat
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8) ![License](https://img.shields.io/badge/License-MIT-green)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38bdf8?style=flat-square&logo=tailwindcss) ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Aplikasi web modern untuk konversi dan manipulasi file PDF secara gratis. Dibangun dengan Next.js 14, Tailwind CSS, dan teknologi pemrosesan PDF client-side untuk privasi maksimal.
+**KonversiPDF** adalah aplikasi manipulasi PDF berbasis web yang dibangun dengan **Next.js 14**. Aplikasi ini dirancang untuk memberikan pengalaman pengguna yang cepat, aman, dan modern dengan fokus pada privasi data (client-side processing).
 
-🌐 **Demo Live:** [https://konversipdf.com](https://konversipdf.com) (Contoh URL)
+Aplikasi ini menghadirkan berbagai alat PDF esensial, tampilan bersih (clean UI), performa tinggi, dan sepenuhnya responsif di berbagai perangkat.
 
-## ✨ Fitur Unggulan
+---
 
-- **Privacy-First**: Sebagian besar pemrosesan (Merge, Split, Rotate, PDF ke JPG) berjalan 100% di browser pengguna. File Anda tidak pernah meninggalkan perangkat Anda.
-- **Server-Side Conversion**: Dukungan konversi format Office (DOCX, PPT) menggunakan API secure server-side.
-- **Modern UI/UX**: Desain responsif, animasi halus, dan antarmuka yang intuitif.
-- **PWA Ready**: Dapat diinstal sebagai aplikasi di perangkat mobile dan desktop.
+## � Fitur Utama
 
-### 🛠️ Daftar Alat
-| Alat | Deskripsi | Processing |
-|------|-----------|------------|
-| 🖼️ **PDF ke JPG** | Ubah halaman PDF menjadi gambar kualitas tinggi | Client-side |
-| 📷 **JPG ke PDF** | Gabungkan banyak foto menjadi satu file PDF | Client-side |
-| 🔗 **Gabung PDF** | Satukan beberapa file PDF menjadi satu | Client-side |
-| ✂️ **Pisah PDF** | Pecah file PDF per halaman atau range tertentu | Client-side |
-| 📦 **Kompres PDF** | Perkecil ukuran file PDF tanpa kurangi kualitas | Client-side |
-| 🔄 **Putar PDF** | Rotasi halaman PDF 90/180/270 derajat | Client-side |
-| 📝 **DOCX ke PDF** | Konversi dokumen Word ke PDF presisi tinggi | Server-side (API) |
-| 📊 **PPT ke PDF** | Konversi presentasi PowerPoint ke PDF | Server-side (API) |
+- 🖼️ **PDF ke JPG** — Ubah halaman PDF menjadi gambar berkualitas tinggi (Batch support).
+- 📷 **JPG ke PDF** — Gabungkan banyak foto menjadi satu tak dokumen PDF.
+- 🔗 **Gabung PDF (Merge)** — Satukan beberapa file PDF menjadi satu file urut.
+- ✂️ **Pisah PDF (Split)** — Pecah file PDF per halaman atau ambil halaman tertentu.
+- 📦 **Kompres PDF** — Perkecil ukuran file PDF agar lebih hemat penyimpanan.
+- 🔄 **Putar PDF (Rotate)** — Rotasi orientasi halaman PDF (90°/180°/270°).
+- 📝 **Konversi Office** — Dukungan konversi DOCX dan PPT ke PDF (via Server API).
+- � **Privacy-First** — Hampir semua proses dilakukan di browser pengguna (Client-side), file aman.
+- 📱 **Responsive Design** — Tampilan optimal di Desktop, Tablet, dan Mobile.
 
-## 🚀 Teknologi
+---
 
-Project ini dibangun menggunakan stack modern:
+## �️ Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **PDF Core**: `pdf-lib` & `pdfjs-dist`
-- **Animations**: CSS Animations & Tailwind config
+Project ini dibangun menggunakan teknologi web modern untuk performa dan developer experience terbaik:
+
+- **Next.js 14** (App Router) — Framework React untuk web modern.
+- **TypeScript** — Tipe data statis untuk kode yang lebih aman.
+- **Tailwind CSS** — Utility-first CSS framework untuk styling cepat.
+- **Framer Motion** — Library animasi untuk interaksi yang halus.
+- **pdf-lib** & **pdfjs-dist** — Core library untuk manipulasi PDF di browser.
+- **Lucide React** — Set ikon open-source yang cantik dan konsisten.
+- **Vercel** — Platform deployment dan hosting.
+
+---
 
 ## 💻 Cara Menjalankan (Local Development)
 
-Ikuti langkah ini untuk menjalankan project di komputer Anda:
+Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer Anda:
 
-1. **Clone Repository**
-   ```bash
-   git clone https://github.com/username/pdfconvert.git
-   cd pdfconvert
-   ```
+### 1. Clone Repository
+```bash
+git clone https://github.com/ptraxzy/PdfConvert.git
+cd PdfConvert
+```
 
-2. **Install Dependencies**
-   ```bash
-   npm install
-   # atau
-   yarn install
-   ```
+### 2. Install Dependencies
+Pastikan Anda sudah menginstall [Node.js](https://nodejs.org/) (versi 18+ direkomendasikan).
+```bash
+npm install
+# atau
+yarn install
+```
 
-3. **Setup Environment Variables**
-   Buat file `.env.local` di root folder dan tambahkan API Key untuk fitur DOCX/PPT (Dapatkan di [ConvertAPI](https://www.convertapi.com/)):
-   ```env
-   PDF_API_KEY=your_convert_api_secret_key_here
-   ```
+### 3. Setup Environment Variables
+Buat file `.env.local` di root folder project. Tambahkan API Key untuk fitur konversi Office (DOCX/PPT). Anda bisa mendapatkan key gratis di [ConvertAPI](https://www.convertapi.com/).
 
-4. **Jalankan Server Development**
-   ```bash
-   npm run dev
-   ```
+```env
+# .env.local
+PDF_API_KEY=your_convert_api_secret_key_here
+# Optional: Key khusus development
+PDF_API_SANDBOX_KEY=your_sandbox_key_here
+```
 
-5. **Buka Browser**
-   Buka [http://localhost:3000](http://localhost:3000) untuk melihat aplikasi.
+### 4. Jalankan Server Development
+```bash
+npm run dev
+```
 
-## 📦 Deployment (Vercel)
+Buka browser dan akses **[http://localhost:3000](http://localhost:3000)**. 🎉
 
-Cara termudah untuk deploy adalah menggunakan [Vercel](https://vercel.com/):
+---
 
-1. Push project ke GitHub/GitLab.
-2. Import project di dashboard Vercel.
-3. Masukkan Environment Variable `PDF_API_KEY`.
-4. Klik **Deploy**.
+## 📦 Struktur Project
+
+```
+├── app/                  # App Router pages & API routes
+│   ├── api/              # Server-side API endpoints
+│   ├── tools/            # Halaman masing-masing alat PDF
+│   └── page.tsx          # Landing page
+├── components/           # Reusable UI components
+├── lib/                  # Utility functions (PDF processing logic)
+├── public/               # Static assets (images, icons)
+└── ...config files
+```
+
+---
 
 ## 🤝 Kontribusi
 
-Kontribusi sangat diterima! Silakan buat Pull Request untuk fitur baru atau perbaikan bug.
+Kontribusi selalu terbuka! Jika Anda ingin menambahkan fitur atau memperbaiki bug:
 
-1. Fork repository ini
-2. Buat branch fitur (`git checkout -b fitur-keren`)
-3. Commit perubahan (`git commit -m 'Menambahkan fitur keren'`)
-4. Push ke branch (`git push origin fitur-keren`)
-5. Buat Pull Request
+1. **Fork** repository ini.
+2. Buat branch fitur baru (`git checkout -b fitur-keren`).
+3. **Commit** perubahan Anda (`git commit -m 'Menambahkan fitur keren'`).
+4. **Push** ke branch tersebut (`git push origin fitur-keren`).
+5. Buat **Pull Request** di GitHub.
+
+---
 
 ## 📝 Lisensi
 
-Project ini dilisensikan di bawah [MIT License](LICENSE).
+Project ini dilisensikan di bawah **[MIT License](LICENSE)**.
 
 ---
 
