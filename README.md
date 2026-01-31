@@ -69,32 +69,7 @@ Buka browser dan akses **[http://localhost:3000](http://localhost:3000)**. 🎉
 
 ---
 
-## 📦 Struktur Project
 
-```
-├── app/                  # App Router pages & API routes
-│   ├── api/              # Server-side API endpoints
-│   ├── tools/            # Halaman masing-masing alat PDF
-│   └── page.tsx          # Landing page
-├── components/           # Reusable UI components
-├── lib/                  # Utility functions (PDF processing logic)
-├── public/               # Static assets (images, icons)
-└── ...config files
-```
-
----
-
-## 🤝 Kontribusi
-
-Kontribusi selalu terbuka! Jika Anda ingin menambahkan fitur atau memperbaiki bug:
-
-1. **Fork** repository ini.
-2. Buat branch fitur baru (`git checkout -b fitur-keren`).
-3. **Commit** perubahan Anda (`git commit -m 'Menambahkan fitur keren'`).
-4. **Push** ke branch tersebut (`git push origin fitur-keren`).
-5. Buat **Pull Request** di GitHub.
-
----
 
 ## 📝 Lisensi
 
